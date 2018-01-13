@@ -4,7 +4,6 @@
 * [Google play store](https://github.com/Idrottskoll)
 
 ## Installing
-1.
 ```BASH
 git clone https://github.com/Idrottskoll/idrottskoll-web.git <My App Name>
 cd idrottskoll-web <My App Name>
