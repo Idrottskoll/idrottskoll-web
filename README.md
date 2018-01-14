@@ -20,7 +20,7 @@ npm run start
 
 ### JavaScript
 * Use semicolons `;`
-* ES6 standards
+* [ES6 standards `airbnb`](https://github.com/airbnb/javascript)
 * Prefer `'` over `"`
 * 80 character line length
 * Do NOT use `var` when declaring a variable
