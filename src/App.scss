@@ -1,5 +1,3 @@
-@import "scss/patterns/colors";
-
-body {
-  background-color: $black;
-}
+@import "scss/patterns/variables";
+@import "scss/patterns/mixins";
+@import "scss/patterns/functions";
