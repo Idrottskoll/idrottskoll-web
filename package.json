@@ -27,7 +27,8 @@
     "fs-extra": "3.0.1",
     "html-webpack-plugin": "2.29.0",
     "jest": "20.0.4",
-    "node-sass": "^4.7.2",
+    "node-sass-chokidar": "0.0.3",
+    "npm-run-all": "^4.1.2",
     "object-assign": "4.1.1",
     "postcss-flexbugs-fixes": "3.2.0",
     "postcss-loader": "2.0.8",
@@ -51,9 +52,12 @@
     "whatwg-fetch": "2.0.3"
   },
   "scripts": {
-    "start": "node scripts/start.js",
-    "build": "node scripts/build.js",
-    "test": "node scripts/test.js --env=jsdom"
+    "build-css": "node-sass-chokidar src/ -o src/",
+    "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
+    "start": "node scripts/start.js && watch-css",
+    "build": "node scripts/build.js && build-css",
+    "test": "node scripts/test.js --env=jsdom",
+    "dev": "concurrently --kill-others \"npm run start\" \"npm run watch-css\""
   },
   "jest": {
     "collectCoverageFrom": [
@@ -98,6 +102,7 @@
     "extends": "react-app"
   },
   "devDependencies": {
+    "concurrently": "^3.5.1",
     "css-loader": "^0.28.7",
     "node-sass": "^4.7.2",
     "sass-loader": "^6.0.6",
