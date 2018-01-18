@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Home from './views/Home';
-import './style.scss';
+import './App.scss';
 import ReactGA from 'react-ga';
 
 
