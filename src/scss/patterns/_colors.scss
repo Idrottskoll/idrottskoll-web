@@ -1,0 +1,37 @@
+/* COLORS  */
+$blue: #26435A;
+$black: #000000;
+$white: #FFFFFF;
+$grey: #9B9B9B;
+$light-grey: #F4F4F4;
+
+
+$colors: (
+  'white': $white,
+  'black': $black,
+  'dark-gray': $dark-gray,
+  'light-gray': $light-gray,
+  'blue': $blue,
+  'red': $red,
+  'orange': $orange
+);
+
+
+@function textcolor($color) {
+  @if (lightness($color) > 50) {
+    @return $black;
+  } @else {
+    @return #ffffff;
+  }
+}
+
+@each $color in $colors {
+  $key: nth($color, 1);
+  $value: nth($color, 2);
+  .bg-#{$key} {
+    background-color: $value !important;
+  }
+  .color-#{$key} {
+    color: $value !important;
+  }
+}
