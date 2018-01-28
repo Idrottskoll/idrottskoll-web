@@ -4,6 +4,7 @@ import ReactGA from 'react-ga';
 
 import Usp from './components/Usp';
 import About from './components/About';
+import CaseSlider from './components/CaseSlider';
 
 export default class App extends Component {
     constructor() {
@@ -21,6 +22,7 @@ export default class App extends Component {
         <div>
           <Usp />
           <About />
+          <CaseSlider />
         </div>
       );
     }
