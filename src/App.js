@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import './App.scss';
 import ReactGA from 'react-ga';
 
-import Usp from './components/Usp';
-import About from './components/About';
-import CaseSlider from './components/CaseSlider';
+import Usp from './components/landingpage/Usp';
+import About from './components/landingpage/About';
+import CaseSlider from './components/landingpage/CaseSlider';
 
 import Footer from './components/shared/Footer';
 
