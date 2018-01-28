@@ -6,6 +6,8 @@ import Usp from './components/Usp';
 import About from './components/About';
 import CaseSlider from './components/CaseSlider';
 
+import Footer from './components/shared/Footer';
+
 export default class App extends Component {
     constructor() {
         super();
@@ -23,6 +25,7 @@ export default class App extends Component {
           <Usp />
           <About />
           <CaseSlider />
+          <Footer />
         </div>
       );
     }
