@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { Grid, Row, Col, Image } from 'react-bootstrap';
 
-export default class Usp extends Component {
-
+export default class About extends Component {
   render() {
     return (
       <Grid>

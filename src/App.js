@@ -3,6 +3,7 @@ import './App.scss';
 import ReactGA from 'react-ga';
 
 import Usp from './components/Usp';
+import About from './components/About';
 
 export default class App extends Component {
     constructor() {
@@ -16,10 +17,11 @@ export default class App extends Component {
     }
 
     render() {
-        return (
-            <div>
-                <Usp />
-            </div>
-        );
+      return (
+        <div>
+          <Usp />
+          <About />
+        </div>
+      );
     }
 }
