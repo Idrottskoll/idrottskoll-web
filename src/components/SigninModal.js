@@ -12,7 +12,7 @@ export default class SigninModal extends React.Component {
             show: false,
             email: '',
             password: '',
-            validEmail: /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/,
+            validEmail: /^([A-Za-z0-9_\-.])+@([A-Za-z0-9_\-.])+.([A-Za-z]{2,4})$/,
             buttonStyle: 'danger'
         };
     }
@@ -22,13 +22,25 @@ export default class SigninModal extends React.Component {
             return false;
         }
 
-        if (this.state.email.length < 5 && this.state.password.length < 5) {
+        if (this.state.email.length < 5 && this.state.password.length < 3) {
             return false;
         }
 
-        const user = await axios(dotenv.IDROTTSKOLL_API_HOST).then(response => {
-            console.log(response);
-        });
+        const user = await axios
+            .post('https://www.ikoll.se/api/v1/login', {
+                email: this.state.email,
+                password: this.state.password
+            })
+            .then(response => {
+                if (response.status === 200 && response.data.token) {
+                    this.handleClose;
+                    alert(response.statusText);
+                    // TODO: save token
+                    // TODO: mak user aut and hide buttons
+                } else {
+                    console.log(response);
+                }
+            });
     };
 
     /**
@@ -51,7 +63,7 @@ export default class SigninModal extends React.Component {
      * @param string email
      */
     validatePassword(password) {
-        if (password.length < 5) {
+        if (password.length < 3) {
             return 'error';
         }
 
