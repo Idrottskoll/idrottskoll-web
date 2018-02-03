@@ -1,0 +1,46 @@
+/*
+* Create classes for top- and bottom margin: tm-10, tm-20, tm-30, bm-10, bm-20, bm-30 etc
+*/
+
+@for $i from 0 through 10 {
+  .m-#{$i}0
+	{
+		margin: $i * 10px !important;
+	}
+	.tm-#{$i}0
+	{
+		margin-top: $i * 10px !important;
+	}
+	.rm-#{$i}0
+	{
+		margin-right: $i * 10px !important;
+	}
+  .bm-#{$i}0
+	{
+		margin-bottom: $i * 10px !important;
+	}
+	.lm-#{$i}0
+	{
+		margin-left: $i * 10px !important;
+	}
+  .p-#{$i}0
+	{
+		padding: $i * 10px !important;
+	}
+  .tp-#{$i}0
+	{
+		padding-top: $i * 10px !important;
+	}
+	.rp-#{$i}0
+	{
+		padding-right: $i * 10px !important;
+	}
+  .bp-#{$i}0
+	{
+		padding-bottom: $i * 10px !important;
+	}
+	.lp-#{$i}0
+	{
+		padding-left: $i * 10px !important;
+	}
+}
