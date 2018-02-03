@@ -23,6 +23,7 @@ export default class App extends Component {
     render() {
         return (
             <div>
+                {/* Check if user is signin: !this.props.authenticated ? <SigninModal /> : <SignoutButton /> */}
                 {!localStorage.token ? <SigninModal /> : <SignoutButton />}
                 <Usp />
                 <About />
