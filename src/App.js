@@ -23,6 +23,7 @@ export default class App extends Component {
     render() {
         return (
             <div>
+                {!localStorage.token ? <SigninModal /> : <SignoutButton />}
                 <Usp />
                 <About />
                 <CaseSlider />
