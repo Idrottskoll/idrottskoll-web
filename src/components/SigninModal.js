@@ -33,10 +33,8 @@ export default class SigninModal extends React.Component {
             })
             .then(response => {
                 if (response.status === 200 && response.data.token) {
-                    this.handleClose;
-                    alert(response.statusText);
-                    // TODO: save token
-                    // TODO: mak user aut and hide buttons
+                    localStorage.setItem('token', response.data.token);
+                    this.handleClose();
                 } else {
                     console.log(response);
                 }

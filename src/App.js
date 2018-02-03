@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import './App.scss';
 import ReactGA from 'react-ga';
-import Footer from './components/Footer';
-import AddTodo from './containers/AddTodo';
-import VisibleTodoList from './containers/VisibleTodoList';
+import SigninModal from './components/SigninModal';
+import SignoutButton from './components/SignoutButton';
 
 export default class App extends Component {
     constructor() {
@@ -20,9 +19,7 @@ export default class App extends Component {
         return (
             <div>
                 <h1>Idrottskoll</h1>
-                <AddTodo />
-                <VisibleTodoList />
-                <Footer />
+                {!localStorage.token ? <SigninModal /> : <SignoutButton />}
             </div>
         );
     }
