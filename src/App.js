@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.scss';
 import ReactGA from 'react-ga';
 
+import Hero from './components/landingpage/Hero';
 import Usp from './components/landingpage/Usp';
 import About from './components/landingpage/About';
 import CaseSlider from './components/landingpage/CaseSlider';
@@ -22,6 +23,7 @@ export default class App extends Component {
     render() {
       return (
         <div>
+          <Hero />
           <Usp />
           <About />
           <CaseSlider />
