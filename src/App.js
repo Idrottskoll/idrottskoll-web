@@ -5,7 +5,8 @@ import ReactGA from 'react-ga';
 import Usp from './components/landingpage/Usp';
 import About from './components/landingpage/About';
 import CaseSlider from './components/landingpage/CaseSlider';
-
+import SigninModal from './components/SigninModal';
+import SignoutButton from './components/SignoutButton';
 import Footer from './components/shared/Footer';
 
 export default class App extends Component {
@@ -20,13 +21,15 @@ export default class App extends Component {
     }
 
     render() {
-      return (
-        <div>
-          <Usp />
-          <About />
-          <CaseSlider />
-          <Footer />
-        </div>
-      );
+        return (
+            <div>
+                {/* Check if user is signin: !this.props.authenticated ? <SigninModal /> : <SignoutButton /> */}
+                {!localStorage.token ? <SigninModal /> : <SignoutButton />}
+                <Usp />
+                <About />
+                <CaseSlider />
+                <Footer />
+            </div>
+        );
     }
 }

@@ -5,9 +5,12 @@ import { createStore } from 'redux';
 import todoApp from './reducers';
 import './App.css';
 import App from './App';
+import dotenv from 'dotenv';
 
 // registerServiceWorker is for offline support
 //import registerServiceWorker from './registerServiceWorker';
+
+dotenv.config();
 
 let store = createStore(todoApp);
 
