@@ -9,6 +9,23 @@ video {
   width: 100vw;
   position: absolute;
 }
+.hero-module-nav {
+  background-color: $blue;
+  background: linear-gradient(to bottom, rgba(38, 67, 90, .8), rgba(38, 67, 90, 1));
+  height: 40em;
+  width: 100vw;
+  z-index: 1000;
+  position: relative;
+  .hero-content {
+    height: 100%;
+    .steps {
+      display: flex;
+      height: 100%;
+      align-items: center;
+      text-align: center;
+    }
+  }
+}
 .hero-module {
   background-color: $blue;
   background: linear-gradient(to bottom, rgba(38, 67, 90, .8), rgba(38, 67, 90, 1));
