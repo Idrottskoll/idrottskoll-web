@@ -6,9 +6,32 @@
   font-family: 'rift-soft', sans-serif;
   font-size: em(22);
   right: 0;
-  &:hover {
+  border: none;
+  &:hover, &:focus {
+    background: none;
     outline: none;
     border: 0;
     text-decoration: underline;
+  }
+}
+
+.modal-body {
+  label {
+    font-family: 'rift-soft', sans-serif;
+    font-size: em(20);
+    font-weight: 300;
+    color: $black !important;
+  }
+  input {
+    border-color: $black !important;
+    box-shadow: none !important;
+  }
+}
+.modal-footer {
+  button {
+    background: $blue;
+    border: none;
+    font-family: 'rift-soft', sans-serif;
+    font-size: em(20);
   }
 }
