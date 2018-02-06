@@ -8,7 +8,7 @@ export default class About extends Component {
         <Grid>
           <Row className="bm-20 tm-20">
             <Col md={4}>
-              <Image src="src/images/icons/add-order-icon--black.svg" />
+              <Image src={require("../../images/icons/add-order-icon--black.svg")} />
             </Col>
             <Col md={8}>
               <h2>Om Idrottskoll</h2>
