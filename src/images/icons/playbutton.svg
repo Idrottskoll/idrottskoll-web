@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="60px" height="60px" viewBox="0 0 60 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47 (45396) - http://www.bohemiancoding.com/sketch -->
+    <title>Playbutton Video Copy</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.9">
+        <g id="mockup-2" transform="translate(-159.000000, -203.000000)">
+            <g id="Content" transform="translate(0.000000, 89.000000)">
+                <g id="Playbutton-Video" transform="translate(159.000000, 114.000000)">
+                    <circle id="Oval-2" fill="#FFFFFF" cx="30" cy="30" r="30"></circle>
+                    <polygon id="Triangle" fill="#26435A" transform="translate(32.592593, 30.370370) rotate(90.000000) translate(-32.592593, -30.370370) " points="32.5925926 20 42.962963 40.7407407 22.2222222 40.7407407"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

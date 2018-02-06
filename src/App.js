@@ -7,6 +7,7 @@ import Usp from './components/landingpage/Usp';
 import About from './components/landingpage/About';
 import CaseSlider from './components/landingpage/CaseSlider';
 // import Navigation from './components/usercontent/Navigation';
+import Video from './components/usercontent/Video';
 import SigninModal from './components/SigninModal';
 import SignoutButton from './components/SignoutButton';
 import Footer from './components/shared/Footer';
