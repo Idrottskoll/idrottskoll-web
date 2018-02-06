@@ -93,7 +93,7 @@ export default class SigninModal extends React.Component {
     render() {
         return (
             <div>
-                <Button bsStyle="primary" onClick={this.handleShow}>
+                <Button bsStyle="primary" onClick={this.handleShow} className="login">
                     Logga in
                 </Button>
 

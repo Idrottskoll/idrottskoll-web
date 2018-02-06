@@ -1,0 +1,14 @@
+.login {
+  position: absolute;
+  color: white;
+  z-index: 30000;
+  background: none;
+  font-family: 'rift-soft', sans-serif;
+  font-size: em(22);
+  right: 0;
+  &:hover {
+    outline: none;
+    border: 0;
+    text-decoration: underline;
+  }
+}
