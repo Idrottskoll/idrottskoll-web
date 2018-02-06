@@ -7,7 +7,7 @@ import Usp from './components/landingpage/Usp';
 import About from './components/landingpage/About';
 import CaseSlider from './components/landingpage/CaseSlider';
 
-import Navigation from './components/usercontent/Navigation';
+// import Navigation from './components/usercontent/Navigation';
 
 import Footer from './components/shared/Footer';
 
@@ -26,7 +26,6 @@ export default class App extends Component {
       return (
         <div>
           <Hero />
-          <Navigation />
           <Usp />
           <About />
           <CaseSlider />
