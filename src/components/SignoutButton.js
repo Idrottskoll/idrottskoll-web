@@ -8,7 +8,7 @@ export default class SignoutButton extends React.Component {
 
     render() {
         return (
-            <Button bsStyle="primary" onClick={this.signOut}>
+            <Button bsStyle="primary" onClick={this.signOut} className="logout">
                 Logga ut
             </Button>
         );
