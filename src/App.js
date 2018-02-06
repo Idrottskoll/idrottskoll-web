@@ -10,6 +10,7 @@ import CaseSlider from './components/landingpage/CaseSlider';
 import SigninModal from './components/SigninModal';
 import SignoutButton from './components/SignoutButton';
 import Footer from './components/shared/Footer';
+import Streams from './components/video/Streams';
 
 export default class App extends Component {
     constructor() {
@@ -23,16 +24,18 @@ export default class App extends Component {
     }
 
     render() {
-      return (
-        <div>
-          {/* Check if user is signin: !this.props.authenticated ? <SigninModal /> : <SignoutButton /> */}
-          {!localStorage.token ? <SigninModal /> : <SignoutButton />}
-          <Hero />
-          <Usp />
-          <About />
-          <CaseSlider />
-          <Footer />
-        </div>
-      );
+        const dev = true;
+        return (
+            <div>
+                {dev ? <Streams /> : null}
+                {/* Check if user is signin: !this.props.authenticated ? <SigninModal /> : <SignoutButton /> */}
+                {!localStorage.token ? <SigninModal /> : <SignoutButton />}
+                <Hero />
+                <Usp />
+                <About />
+                <CaseSlider />
+                <Footer />
+            </div>
+        );
     }
 }
