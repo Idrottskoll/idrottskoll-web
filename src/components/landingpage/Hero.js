@@ -4,7 +4,7 @@ export default class Hero extends Component {
   render() {
     return (
       <div className="video-container bm-40">
-         <video src={'src/videos/background.mov'} autoPlay loop></video>
+         <video src={require('../../videos/background.mov')} autoPlay loop></video>
         <div className="hero-module">
           <div className="hero-content">
             <div className="logotype"></div>
