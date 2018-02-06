@@ -1,0 +1,65 @@
+.video-container {
+  max-height: 40em;
+  min-height: 40em;
+  position: relative;
+  overflow: hidden;
+}
+video {
+  height: auto;
+  width: 100vw;
+  position: absolute;
+}
+.hero-module-nav {
+  background-color: $blue;
+  background: linear-gradient(to bottom, rgba(38, 67, 90, .8), rgba(38, 67, 90, 1));
+  height: 40em;
+  width: 100vw;
+  z-index: 1000;
+  position: relative;
+  .hero-content {
+    height: 40em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    h3 {
+      margin: 0;
+    }
+    .steps {
+      display: flex;
+      height: 100%;
+      align-items: center;
+      text-align: center;
+    }
+  }
+}
+.hero-module {
+  background-color: $blue;
+  background: linear-gradient(to bottom, rgba(38, 67, 90, .8), rgba(38, 67, 90, 1));
+  height: 40em;
+  width: 100vw;
+  z-index: 1000;
+  position: relative;
+
+  .hero-content {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    .logotype {
+      // background-image: url('./src/assets/img/logotype.png');
+      background-size: 100%;
+      width: 220px;
+      height: 40%;
+      background-repeat: no-repeat;
+      margin-top: 2em;
+    }
+    h1 {
+      text-align: center;
+      .smaller-text {
+        font-size: 32px;
+      }
+    }
+  }
+}
