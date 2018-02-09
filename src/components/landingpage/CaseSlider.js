@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Grid, Row, Col } from 'react-bootstrap';
-// import Slider from 'react-slick';
+import Slider from 'react-slick';
 
 export default class CaseSlider extends Component {
   render() {
@@ -19,14 +19,14 @@ export default class CaseSlider extends Component {
             <Col md={12}><h2>Några turneringar som Idrottskoll har filmat</h2></Col>
           </Row>
           <Row className="bm-20">
-            {/* <Slider {...settings}>
+            <Slider {...settings}>
               <Col md={3}><div className="case bg-light-grey"><h4>Junior SM 2016 i squash</h4></div></Col>
               <Col md={3}><div className="case bg-light-grey"><h4>Junior SM 2016 i squash</h4></div></Col>
               <Col md={3}><div className="case bg-light-grey"><h4>Junior SM 2016 i squash</h4></div></Col>
               <Col md={3}><div className="case bg-light-grey"><h4>Junior SM 2016 i squash</h4></div></Col>
               <Col md={3}><div className="case bg-light-grey"><h4>Junior SM 2016 i squash</h4></div></Col>
               <Col md={3}><div className="case bg-light-grey"><h4>Junior SM 2016 i squash</h4></div></Col>
-          </Slider> */}
+          </Slider>
           </Row>
         </Grid>
       </div>
