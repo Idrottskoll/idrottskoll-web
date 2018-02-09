@@ -7,10 +7,10 @@ export default class About extends Component {
       <div className="bg-light-grey tm-40">
         <Grid>
           <Row className="bm-20 tm-20">
-            <Col md={4}>
-              <Image src={require("../../images/icons/add-order-icon--black.svg")} />
+            <Col md={5}>
+              <Image className="about-image" src={require("../../images/joakim-monterar.png")} />
             </Col>
-            <Col md={8}>
+            <Col md={7} className="tp-20 bp-10 about-info">
               <h2>Om Idrottskoll</h2>
               <p>
                 Idrottskoll grundades 2014, med idé om att alla skall kunna utvecka sin idrott med hjälp av video. Idag använder elitspelare och top klubbar dagligen video analysering för att förbättra deras prestationer. Både genom hitta vad man kan förbättra i sitt spel, men även plocka ut de positiva sekvenserna ur en matchen eller träning.
