@@ -6,7 +6,7 @@ export default class Footer extends Component {
     return (
       <div className="bg-blue tm-40 footer color-white">
         <Grid>
-          <Row className="tm-20 bm-20">
+          <Row className="tp-20 bp-20">
             <Col md={6}>
               <h4>Intresserad av en video?</h4>
               <p>
