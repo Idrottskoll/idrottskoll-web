@@ -13,7 +13,7 @@ export default class CaseSlider extends Component {
       autoplaySpeed: 4000
     };
     return (
-      <div className="tm-40">
+      <div className="tm-40 case-slider">
         <Grid>
           <Row className="tm-20 bm-10">
             <Col md={12}><h2>Några turneringar som Idrottskoll har filmat</h2></Col>
