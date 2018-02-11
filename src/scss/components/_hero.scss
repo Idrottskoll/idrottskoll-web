@@ -48,12 +48,13 @@ video {
     align-items: center;
     flex-direction: column;
     .logotype {
-      // background-image: url('./src/assets/img/logotype.png');
-      background-size: 100%;
       width: 220px;
       height: 40%;
       background-repeat: no-repeat;
       margin-top: 2em;
+      img {
+        width: em(210);
+      }
     }
     h1 {
       text-align: center;

@@ -21,11 +21,11 @@ export default class CaseSlider extends Component {
           <Row className="bm-20">
             <Slider {...settings}>
               <Col md={3}><div className="case bg-light-grey"><h4>Junior SM 2016 i squash</h4></div></Col>
-              <Col md={3}><div className="case bg-light-grey"><h4>Junior SM 2016 i squash</h4></div></Col>
-              <Col md={3}><div className="case bg-light-grey"><h4>Junior SM 2016 i squash</h4></div></Col>
-              <Col md={3}><div className="case bg-light-grey"><h4>Junior SM 2016 i squash</h4></div></Col>
-              <Col md={3}><div className="case bg-light-grey"><h4>Junior SM 2016 i squash</h4></div></Col>
-              <Col md={3}><div className="case bg-light-grey"><h4>Junior SM 2016 i squash</h4></div></Col>
+              <Col md={3}><div className="case bg-light-grey"><h4>Veteran SM 2016 i squash</h4></div></Col>
+              <Col md={3}><div className="case bg-light-grey"><h4>Junior RM 2014 i tennis</h4></div></Col>
+              <Col md={3}><div className="case bg-light-grey"><h4>Junior RM 2015 i tennis</h4></div></Col>
+              <Col md={3}><div className="case bg-light-grey"><h4>Junior RM 2016 i tennis</h4></div></Col>
+              <Col md={3}><div className="case bg-light-grey"><h4>Junior SM 2016 tennis</h4></div></Col>
           </Slider>
           </Row>
         </Grid>

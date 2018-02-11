@@ -1,0 +1,8 @@
+.usp-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .usp-icon {
+    width: em(100);
+  }
+}

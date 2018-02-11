@@ -10,9 +10,7 @@ export default class Footer extends Component {
             <Col md={6}>
               <h4>Intresserad av en video?</h4>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
-                <br></br><br></br>
-                Beställ din video här
+                Genom att skicka ett mail till joakim@idrottskoll.se så kan du lägga en förfrågan av inspelning. Därefter ger vi dig ett prisförslag. När videon sedan är inspelat så kan du nå den genom att logga in på hemsidan. Inom snar framtid kommer du även kunna använda dig av vår app.
                 </p>
             </Col>
             <Col md={6} className="right">
