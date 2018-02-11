@@ -7,3 +7,9 @@
   align-items: baseline;
   justify-content: center;
 }
+
+@media screen and (max-width: 39.9375em) {
+ .about-image {
+   margin-top: em(20);
+ }
+}
