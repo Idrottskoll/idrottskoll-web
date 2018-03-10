@@ -10,7 +10,7 @@ export default class Streams extends React.Component {
 
     fetchStreams = async () => {
         axios
-            // replace width config file varable
+            // replace width config file variable
             .get('https://www.ikoll.se/api/v1/orders')
             .then(response => {
                 if (response.data) {
