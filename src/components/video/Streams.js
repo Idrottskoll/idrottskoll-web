@@ -4,37 +4,46 @@ import axios from 'axios';
 export default class Streams extends React.Component {
     constructor() {
         super();
-        this.state = { streams: false };
+        this.state = { has_streams: false, streams: null };
+        this.fetchStreams();
     }
 
-    fetchStreams = () => {
+    fetchStreams = async () => {
         axios
+            // replace width config file varable
             .get('https://www.ikoll.se/api/v1/orders')
             .then(response => {
                 if (response.data) {
-                    return this.setState({ streams: response.data });
+                    this.setState({ streams: response.data, has_streams: true });
                 }
             })
             .catch(error => {
                 console.log(error);
             });
+        this.timer();
     };
 
     displayStreams() {
         return this.state.streams.map(stream => {
-            if (stream.record) {
-                return false;
+            console.log(stream);
+            // stream.stream === not recording
+            if (stream.isStreaming && stream.stream) {
+                return <div key={stream._id}>Live!</div>;
             }
-
-            return <div key={stream._id}>Live nu: {stream.stream.club}!</div>;
+            return false;
         });
     }
 
-    componentWillMount = async () => {
-        this.fetchStreams();
+    timer = async () => {
+        setTimeout(() => {
+            this.fetchStreams();
+        }, 240000); // 4 Minutes
     };
 
     render() {
-        return this.state.streams !== false ? this.displayStreams() : null;
+        if (this.state.has_streams || this.state.streams !== null) {
+            return this.displayStreams();
+        }
+        return <div />;
     }
 }
