@@ -26,7 +26,7 @@ export default class SigninModal extends React.Component {
             return false;
         }
 
-        const user = await axios
+        await axios
             .post('https://www.ikoll.se/api/v1/login', {
                 email: this.state.email,
                 password: this.state.password
@@ -91,48 +91,53 @@ export default class SigninModal extends React.Component {
     };
 
     render() {
+        console.log(this.state);
         return (
             <div>
                 <Button bsStyle="primary" onClick={this.handleShow} className="login">
                     Logga in
                 </Button>
 
-                <Modal show={this.state.show} onHide={this.handleClose}>
-                    <Modal.Header closeButton>
-                        <Modal.Title>Logga in</Modal.Title>
-                    </Modal.Header>
-                    <Modal.Body>
-                        <form>
-                            <FormGroup
-                                controlId="form-email"
-                                validationState={this.validateEmail(this.state.email)}>
-                                <ControlLabel>E-post adress:</ControlLabel>
-                                <FormControl
-                                    type="email"
-                                    value={this.state.email}
-                                    placeholder="epost@exempel.se"
-                                    onChange={this.handleEmail}
-                                />
-                            </FormGroup>
+                <div className="static-modal">
+                    <Modal show={this.state.show} onHide={() => this.handleClose()}>
+                        <Modal.Header closeButton>
+                            <Modal.Title>Logga in</Modal.Title>
+                        </Modal.Header>
+                        <Modal.Body>
+                            <form>
+                                <FormGroup
+                                    controlId="form-email"
+                                    validationState={this.validateEmail(this.state.email)}
+                                >
+                                    <ControlLabel>E-post adress:</ControlLabel>
+                                    <FormControl
+                                        type="email"
+                                        value={this.state.email}
+                                        placeholder="epost@exempel.se"
+                                        onChange={this.handleEmail}
+                                    />
+                                </FormGroup>
 
-                            <FormGroup
-                                controlId="formBasicText"
-                                validationState={this.validatePassword(this.state.password)}>
-                                <ControlLabel>Lösenord:</ControlLabel>
-                                <FormControl
-                                    type="password"
-                                    value={this.state.password}
-                                    onChange={this.handlePassword}
-                                />
-                            </FormGroup>
-                        </form>
-                    </Modal.Body>
-                    <Modal.Footer>
-                        <Button bsStyle={this.state.buttonStyle} onClick={this.signin}>
-                            Logga in
-                        </Button>
-                    </Modal.Footer>
-                </Modal>
+                                <FormGroup
+                                    controlId="formBasicText"
+                                    validationState={this.validatePassword(this.state.password)}
+                                >
+                                    <ControlLabel>Lösenord:</ControlLabel>
+                                    <FormControl
+                                        type="password"
+                                        value={this.state.password}
+                                        onChange={this.handlePassword}
+                                    />
+                                </FormGroup>
+                            </form>
+                        </Modal.Body>
+                        <Modal.Footer>
+                            <Button bsStyle={this.state.buttonStyle} onClick={this.signin}>
+                                Logga in
+                            </Button>
+                        </Modal.Footer>
+                    </Modal>
+                </div>
             </div>
         );
     }
