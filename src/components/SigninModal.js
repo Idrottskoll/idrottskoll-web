@@ -1,8 +1,6 @@
 import React from 'react';
 import { Modal, Button, FormGroup, FormControl, ControlLabel } from 'react-bootstrap';
 import axios from 'axios';
-import dotenv from 'dotenv';
-dotenv.config();
 
 export default class SigninModal extends React.Component {
     constructor(props, context) {
@@ -26,15 +24,16 @@ export default class SigninModal extends React.Component {
             return false;
         }
 
-        const user = await axios
+        await axios
             .post('https://www.ikoll.se/api/v1/login', {
                 email: this.state.email,
                 password: this.state.password
             })
-            .then(response => {
+            .then(async response => {
                 if (response.status === 200 && response.data.token) {
-                    localStorage.setItem('token', response.data.token);
-                    this.handleClose();
+                    await localStorage.setItem('token', response.data.token);
+                    await this.setState({ show: false });
+                    await this.props.action(true);
                 } else {
                     console.log(response);
                 }
@@ -82,30 +81,31 @@ export default class SigninModal extends React.Component {
         this.setState({ password: password.target.value });
     };
 
-    handleClose = () => {
-        this.setState({ show: false });
-    };
-
-    handleShow = () => {
-        this.setState({ show: true });
-    };
-
     render() {
         return (
             <div>
-                <Button bsStyle="primary" onClick={this.handleShow} className="login">
+                <Button
+                    style={{ display: !this.state.show ? 'block' : 'none' }}
+                    bsStyle="primary"
+                    onClick={() => this.setState({ show: true })}
+                    className="login"
+                >
                     Logga in
                 </Button>
 
-                <Modal show={this.state.show} onHide={this.handleClose}>
-                    <Modal.Header closeButton>
+                <div
+                    style={{ display: this.state.show ? 'block' : 'none' }}
+                    className="static-modal"
+                >
+                    <Modal.Header>
                         <Modal.Title>Logga in</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
                         <form>
                             <FormGroup
                                 controlId="form-email"
-                                validationState={this.validateEmail(this.state.email)}>
+                                validationState={this.validateEmail(this.state.email)}
+                            >
                                 <ControlLabel>E-post adress:</ControlLabel>
                                 <FormControl
                                     type="email"
@@ -117,7 +117,8 @@ export default class SigninModal extends React.Component {
 
                             <FormGroup
                                 controlId="formBasicText"
-                                validationState={this.validatePassword(this.state.password)}>
+                                validationState={this.validatePassword(this.state.password)}
+                            >
                                 <ControlLabel>Lösenord:</ControlLabel>
                                 <FormControl
                                     type="password"
@@ -128,11 +129,12 @@ export default class SigninModal extends React.Component {
                         </form>
                     </Modal.Body>
                     <Modal.Footer>
+                        <Button onClick={() => this.setState({ show: false })}>Stäng</Button>
                         <Button bsStyle={this.state.buttonStyle} onClick={this.signin}>
                             Logga in
                         </Button>
                     </Modal.Footer>
-                </Modal>
+                </div>
             </div>
         );
     }
