@@ -4,6 +4,7 @@ import { Button } from 'react-bootstrap';
 export default class SignoutButton extends React.Component {
     signOut = () => {
         localStorage.removeItem('token');
+        this.props.action(false);
     };
 
     render() {
