@@ -1,11 +1,11 @@
 import React from 'react';
-import { Modal, Button, FormGroup, FormControl, ControlLabel } from 'react-bootstrap';
+import { Modal, Button } from 'react-bootstrap';
 import axios from 'axios';
+import Sigin from './Signin';
 
-export default class SigninModal extends React.Component {
+export default class AuthenticateUser extends React.Component {
     constructor(props, context) {
         super(props, context);
-
         this.state = {
             show: false,
             email: '',
@@ -42,33 +42,6 @@ export default class SigninModal extends React.Component {
 
     /**
      * @param string email
-     * @return string
-     */
-    validateEmail(email) {
-        if (email.length < 5) {
-            return 'error';
-        }
-
-        if (!this.state.validEmail.test(email)) {
-            return 'error';
-        }
-
-        return 'success';
-    }
-
-    /**
-     * @param string email
-     */
-    validatePassword(password) {
-        if (password.length < 3) {
-            return 'error';
-        }
-
-        return 'success';
-    }
-
-    /**
-     * @param string email
      */
     handleEmail = email => {
         this.setState({ email: email.target.value });
@@ -90,7 +63,7 @@ export default class SigninModal extends React.Component {
                     onClick={() => this.setState({ show: true })}
                     className="login"
                 >
-                    Logga in
+                    Logga in / Skapa konto
                 </Button>
 
                 <div
@@ -98,34 +71,16 @@ export default class SigninModal extends React.Component {
                     className="static-modal"
                 >
                     <Modal.Header>
-                        <Modal.Title>Logga in</Modal.Title>
+                        <Modal.Title>Logga in / Skapa konto</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
                         <form>
-                            <FormGroup
-                                controlId="form-email"
-                                validationState={this.validateEmail(this.state.email)}
-                            >
-                                <ControlLabel>E-post adress:</ControlLabel>
-                                <FormControl
-                                    type="email"
-                                    value={this.state.email}
-                                    placeholder="epost@exempel.se"
-                                    onChange={this.handleEmail}
-                                />
-                            </FormGroup>
-
-                            <FormGroup
-                                controlId="formBasicText"
-                                validationState={this.validatePassword(this.state.password)}
-                            >
-                                <ControlLabel>Lösenord:</ControlLabel>
-                                <FormControl
-                                    type="password"
-                                    value={this.state.password}
-                                    onChange={this.handlePassword}
-                                />
-                            </FormGroup>
+                            <Sigin
+                                handleEmail={this.handleEmail}
+                                email={this.state.email}
+                                password={this.state.password}
+                                handlePassword={this.handlePassword}
+                            />
                         </form>
                     </Modal.Body>
                     <Modal.Footer>

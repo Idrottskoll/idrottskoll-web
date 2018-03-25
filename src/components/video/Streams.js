@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import { API_VERSION_1 } from '../../config';
 
 export default class Streams extends React.Component {
     constructor() {
@@ -10,8 +11,7 @@ export default class Streams extends React.Component {
 
     fetchStreams = async () => {
         axios
-            // replace width config file variable
-            .get('https://www.ikoll.se/api/v1/orders')
+            .get(`${API_VERSION_1}/orders`)
             .then(response => {
                 if (response.data) {
                     this.setState({ streams: response.data, has_streams: true });
@@ -20,7 +20,6 @@ export default class Streams extends React.Component {
             .catch(error => {
                 console.log(error);
             });
-        this.timer();
     };
 
     displayStreams() {
@@ -34,16 +33,10 @@ export default class Streams extends React.Component {
         });
     }
 
-    timer = async () => {
-        setTimeout(() => {
-            this.fetchStreams();
-        }, 240000); // 4 Minutes
-    };
-
     render() {
         if (this.state.has_streams || this.state.streams !== null) {
             return this.displayStreams();
         }
-        return <div />;
+        return null;
     }
 }

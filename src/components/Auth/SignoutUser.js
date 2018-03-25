@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
 
-export default class SignoutButton extends React.Component {
+export default class Signout extends React.Component {
     signOut = () => {
         localStorage.removeItem('token');
         this.props.action(false);

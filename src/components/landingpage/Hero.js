@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Image } from 'react-bootstrap';
-import SigninModal from '../SigninModal';
-import SignoutButton from '../SignoutButton';
+import AuthenticateUser from '../Auth/AuthenticateUser';
+import SignoutUser from '../Auth/SignoutUser';
 
 export default class Hero extends Component {
     constructor(props) {
@@ -17,9 +17,9 @@ export default class Hero extends Component {
         return (
             <div className="video-container bm-40">
                 {this.state.token ? (
-                    <SignoutButton action={this.handelToken} />
+                    <SignoutUser action={this.handelToken} />
                 ) : (
-                    <SigninModal action={this.handelToken} />
+                    <AuthenticateUser action={this.handelToken} />
                 )}
                 <video src={require('../../videos/background.mov')} autoPlay loop />
                 <div className="hero-module">
