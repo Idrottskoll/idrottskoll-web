@@ -15,7 +15,7 @@ export default class Hero extends Component {
 
     render() {
         return (
-            <div className="video-container bm-40">
+            <div className="video-container">
                 {this.state.token ? (
                     <SignoutButton action={this.handelToken} />
                 ) : (

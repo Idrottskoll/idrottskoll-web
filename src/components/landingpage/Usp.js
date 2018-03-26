@@ -4,7 +4,7 @@ import { Grid, Row, Col, Image } from 'react-bootstrap';
 export default class About extends Component {
   render() {
     return (
-      <Grid>
+      <Grid className="tm-40">
         <Row>
           <Col md={4}>
             <div className="bg-light-grey bp-20 usp-container">
