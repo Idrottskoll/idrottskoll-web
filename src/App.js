@@ -6,6 +6,7 @@ import Hero from './components/landingpage/Hero';
 import Usp from './components/landingpage/Usp';
 import About from './components/landingpage/About';
 import CaseSlider from './components/landingpage/CaseSlider';
+import Stream from './components/landingpage/Stream';
 // import Navigation from './components/usercontent/Navigation';
 // import Video from './components/usercontent/Video';
 import Footer from './components/shared/Footer';
@@ -23,6 +24,7 @@ export default class App extends Component {
             <div>
                 <Hero />
                 <Streams />
+                <Stream />
                 <Usp />
                 <About />
                 <CaseSlider />
